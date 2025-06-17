@@ -1,55 +1,130 @@
-# React + TypeScript + Vite
+# Fillout Frontend Challenge 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Fillout Frontend implementation! This project showcases a dynamic page navigation bar with drag-and-drop reordering, a custom context menu, an icon picker, smooth animations, and full keyboard accessibility. It’s been built with React, TypeScript, and Tailwind CSS to deliver a polished, interactive user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Features
 
-## Expanding the ESLint configuration
+* **Custom Page Navigation**: Quickly switch between pages with a clean tabbed interface.
+* **Drag & Drop Reordering**: Reorder tabs with intuitive drag-and-drop, complete with visual cues.
+* **Context Menu**: Right-click (or keyboard menu key) on a tab to reveal actions—Rename, Duplicate, Copy, Delete, or Set as First Page.
+* **New Page Modal**: Add new pages at any position, name them, and choose from a preset icon library.
+* **Icon Picker**: Select from predefined icons when creating a page, with live preview and selection state.
+* **Accessible & Keyboard-Friendly**: Full focus management, ARIA roles, and keyboard navigation (Tab, Enter, Escape, Arrow keys).
+* **Tailwind Animations**: Subtle hover lifts, contextual transitions, and responsive styling.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation & Setup
+
+1. **Clone the repo**:
+
+   ```bash
+   git clone https://github.com/graphicallychallenged/fillout-front-end.git
+   cd fillout-front-end
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run in development**:
+
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+4. **Build for production**:
+
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+---
+
+## 🗂️ Project Structure
+
+```
+src/
+├── components/
+│   ├── ContextMenu.tsx       # Floating settings menu
+│   ├── CustomNewPageInput.tsx# Modal to name page + pick icon
+│   ├── Icons.tsx             # Centralized SVG Icon library
+│   ├── PageNavigationBar.tsx # Main tab bar with + and drag/drop
+│   └── PageTab.tsx           # Individual tab component
+├── types.ts                  # Shared TypeScript definitions
+└── App.tsx                   # Root component tying everything together
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧩 Component Overview
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# fillout-front-end
+### `PageNavigationBar`
+
+* Renders the horizontal tab list (role="tablist").
+* Manages hover states, + buttons between tabs, and final “Add page” button.
+* Handles drag events (`onDragStart`, `onDragOver`, `onDrop`, `onDragLeave`, `onDragEnd`) to reorder pages.
+* Opens the `CustomNewPageInput` modal and positions the `ContextMenu`.
+
+### `PageTab`
+
+* Represents a single tab (role="tab").
+* Applies styling for active/inactive states, hover animations, focus ring.
+* Displays the selected page icon (orange when active).
+* Contains an options button to open the `ContextMenu`.
+
+### `ContextMenu`
+
+* Portal-styles an absolutely positioned menu above or below a tab.
+* Keyboard navigable (ArrowUp/ArrowDown/Escape).
+* Actions: Set as First Page, Rename, Copy, Duplicate, Delete.
+
+### `CustomNewPageInput`
+
+* Centered modal overlay to name a new page.
+* Includes an icon picker grid (preset icons from `Icons.tsx`).
+* Form submits on **Enter** or **Create Page** click; **Escape** or **Cancel** closes.
+* Traps focus within the modal for accessibility.
+
+### `Icons`
+
+* Exports an `Icon` component mapping string names to SVGs.
+* Centralizes all icons: `info`, `details`, `other`, `ending`, `plus`, `document`, `rename`, `copy`, `duplicate`, `trash`, `options`.
+
+---
+
+## ⚙️ Coding Style & Conventions
+
+* **ES6+**: Arrow functions, `const`/`let`, spread/rest.
+* **Functional Components** with React Hooks (`useState`, `useEffect`, `useRef`, `useCallback`).
+* **TypeScript**: Strict typing for props, state, and events.
+* **Tailwind CSS**: Utility-first classes, custom animations via `transition-all`, hover/focus states.
+
+---
+
+## ✨ Getting Creative
+
+This codebase is a foundation you can adapt:
+
+* Swap out the icon set in `Icons.tsx`.
+* Adjust spacing, shadows, or color palette in Tailwind config.
+* Extend the context menu actions or modal fields.
+* Integrate persistence (e.g., local storage or API) for pages.
+
+---
+
+## 🙌 Thank You
+
+Thank you for exploring this Fillout Frontend Challenge solution! I hope it demonstrates thoughtfulness in UX, accessibility, and code clarity. Feel free to reach out for any tweaks or to collaborate!
+
+LGTM! 🚀

@@ -3,7 +3,6 @@ import React, {
   useState,
   useRef,
   useEffect,
-  useCallback,
 } from 'react';
 import type {
   MouseEvent as ReactMouseEvent,

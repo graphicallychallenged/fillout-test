@@ -8,14 +8,12 @@ interface ContextMenuProps {
   y: number; 
   onClose: () => void;
   menuRef: RefObject<HTMLDivElement | null>
-  pageName?:string;
 }
 
 const ContextMenu: FC<ContextMenuProps> = ({
   visible,
   x,
   y,
-  pageName,
   onClose,
   menuRef
 }) => {

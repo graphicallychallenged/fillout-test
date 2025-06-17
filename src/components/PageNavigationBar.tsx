@@ -201,12 +201,6 @@ const handleDragEnd = () => {
     );
 };
 
-
-  const getPageName = useCallback(
-    () => pages.find(p => p.id === contextMenu.pageId)?.name || '',
-    [pages, contextMenu.pageId]
-  );
-
   return (
     <div className="relative w-full bg-white rounded-xl p-4 py-4 overflow-visible" role="tablist">
       <div className="flex overflow-x-auto whitespace-nowrap px-4 py-4">
@@ -284,7 +278,6 @@ const handleDragEnd = () => {
         visible={contextMenu.visible}
         x={contextMenu.x}
         y={contextMenu.y}
-        pageName={getPageName()}
         onClose={() => {
                   const trigger = contextMenu.triggerElement;
                  setContextMenu(state => ({ ...state, visible: false }));

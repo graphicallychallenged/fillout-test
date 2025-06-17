@@ -79,7 +79,7 @@ Welcome to the Fillout Frontend implementation by Nyree Mompoint! This project s
 
 ## 🧪 Tests
 
-We use Jest and React Testing Library to ensure:
+I used Jest and React Testing Library to ensure:
 
  **Unit coverage** of all components, focusing on rendering, interactions, and accessibility attributes.
  **Accessibility** checks via role and aria-label queries.
@@ -99,7 +99,7 @@ PageTab.tsx             |   83.33 |    85.71 |    75   |   83.33 | 80-81
 
 ## ✨ The Small Things
 
-While building and reviewing the design, we also caught a handful of fine details that really polish the UX:
+While building and reviewing the design, I also caught a handful of fine details that really polish the UX:
 
 **Dotted line** behind tabs for visual separation  
 **Hover “+” icons** appearing between tabs for quick insertion  

@@ -1,12 +1,11 @@
-// src/components/ContextMenu.tsx
 import  { type FC, useRef} from 'react';
 import type { RefObject } from 'react';
-import { Icon } from './Icons'; // adjust path if your Icon lives elsewhere
+import { Icon } from './Icons'; 
 
 interface ContextMenuProps {
   visible: boolean;
   x: number;
-  y: number; // this will be used as bottom
+  y: number; 
   onClose: () => void;
   menuRef: RefObject<HTMLDivElement | null>
   pageName?:string;

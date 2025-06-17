@@ -1,4 +1,3 @@
-
 import React, {
   type FC,
   useState,
@@ -13,7 +12,7 @@ import type {
 import PageTab from './PageTab';
 import ContextMenu from './ContextMenu';
 import CustomNewPageInput from './CustomNewPageInput';
-import { Icon } from './Icons';          // <-- import your Icon component
+import { Icon } from './Icons';     
 import type { Page, ContextMenuState } from '../types';
 
 interface PageNavigationBarProps {
@@ -31,7 +30,6 @@ const PageNavigationBar: FC<PageNavigationBarProps> = ({
   addPage,
   reorderPages,
 }) => {
-  // no hoverIndex state needed anymore
   const [contextMenu, setContextMenu] = useState<ContextMenuState>({
     visible: false,
     x: 0,

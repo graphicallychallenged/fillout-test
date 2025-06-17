@@ -2,7 +2,7 @@
 module.exports = {
     content: [
       './index.html',
-      './src/**/*.{js,ts,jsx,tsx}',   // ← make sure this globs ALL of your split‐out components
+      './src/**/*.{js,ts,jsx,tsx}', 
     ],
     theme: {
       extend: {},

@@ -1,4 +1,3 @@
-// src/components/PageTab.tsx
 import React, { type FC, useRef } from 'react';
 import type {
   MouseEvent as ReactMouseEvent,
@@ -27,8 +26,6 @@ const PageTab: FC<PageTabProps> = ({
 }) => {
   const tabRef = useRef<HTMLDivElement>(null);
   const isSelected = activePageId === page.id;
-
-  // figure out which icon to render (fall back to "other")
   const iconName = (page.icon?.toLowerCase() as IconName) || 'other';
 
   return (
@@ -57,7 +54,6 @@ const PageTab: FC<PageTabProps> = ({
         className="flex items-center space-x-1 text-sm font-medium"
         style={{ letterSpacing: '-0.015em', lineHeight: '20px' }}
       >
-        {/* info icon stays orange; everything else inherits the tab's text color */}
           <Icon
             name={iconName}
             className={`h-4 w-4 mr-1.5 ${

@@ -3,5 +3,15 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",                   // allow JSX in .tsx
+    "module": "ES2022",                   // must be ES2015 or later for “Bundler”
+    "moduleResolution": "Bundler",        // supports no-extension imports
+    "verbatimModuleSyntax": false,        // let TS rewrite imports for bundlers
+    "esModuleInterop": true,              // default-import CJS
+    "allowSyntheticDefaultImports": true, // convenience
+    "strict": true,
+    "isolatedModules": true
+  }
 }

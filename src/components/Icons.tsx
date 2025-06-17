@@ -1,4 +1,4 @@
-import React, { type FC, type SVGProps } from 'react';
+import { type FC, type SVGProps } from 'react';
 
 export type IconName =
   | 'info'
